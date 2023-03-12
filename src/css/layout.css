@@ -1,3 +1,4 @@
+
 .header {
   display: flex;
   justify-content: space-between;
@@ -12,24 +13,6 @@
 }
 .footer__text {
   display: grid;
-  font-size: .5rem;
+  font-size:var(--fonts_xs);
   letter-spacing: .2rem;
-}
-.footer__logo {
-  width: 2rem;
-  justify-self: center  ;
-}
-
-
-.btn {
-	height: 1.5rem;
-	width: 3.5rem;
-	font-size: 0.5rem;
-	padding: 0.2rem 0.2rem;
-	font-weight: 700;
-	border: none;
-	border-radius: 8px;
-	cursor: pointer;
-	text-transform: uppercase;
-	/* color: #211b32; */
 }

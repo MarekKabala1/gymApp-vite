@@ -1,41 +1,83 @@
+@import 'css/layout.css';
+@import 'css/error.css';
+
 :root {
-  --clr_primary: rgb(29, 44, 68);
-  --clr_button: rgba(13, 245, 227);
-  --clr_button_secondary: rgb(208, 190, 212);
-  --clr_secondary: rgba(55, 49, 66);
-  --clr_text_light: rgb(208, 190, 212);
-  --clr_text_dark: rgb(121, 117, 117);
-  --clr_text_dark_alpha: rgb(121, 117, 117, 0.9);
-  --clr_danger: rgb(168, 6, 6);
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
-  color:var(--clr_text_light);
+	/* color */
+	--clr_primary: rgb(29, 44, 68);
+	--clr_button: rgba(13, 245, 227);
+	--clr_button_secondary: rgb(208, 190, 212);
+	--clr_secondary: rgba(55, 49, 66);
+	--clr_text_light: rgb(208, 190, 212);
+	--clr_text_dark: rgb(121, 117, 117);
+	--clr_text_dark_alpha: rgb(121, 117, 117, 0.9);
+	--clr_danger: rgb(168, 6, 6);
+	--clr_success: hsl(112, 98%, 35%);
+
+	/* spacing */
+	--space_s: 0.5rem;
+	--space_m: 1rem;
+	--space_l: 2rem;
+	--space_xl: 4rem;
+	--space_xx: 6rem;
+
+	/* fonts size */
+	--fonts_xs: 0.5rem;
+	--fonts_s: 1rem;
+	--fonts_m: 2rem;
+	--fonts_l: 4rem;
+	--fonts_xl: 6rem;
+
+	font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+	line-height: 1.5;
+	font-weight: 400;
+	color: var(--clr_text_light);
 }
 
 *,
 *::before,
 *::after {
-  margin: 0;
-  padding: 0;
-  -webkit-box-sizing: border-box;
-  box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
 }
 a {
 	text-decoration: none;
+	color: var(--clr_text_light);
 }
 
 body {
-  background-color: var(--clr_primary);
-  margin: 1rem;
+	background-color: var(--clr_primary);
+	margin: var(--space_m);
 }
 
 img {
-  display: block;
-  max-width: 100%;
+	display: block;
+	max-width: 100%;
 }
 
 svg {
-  pointer-events: none;
+	pointer-events: none;
 }
+.btn {
+	display: inline-block;
+	font-weight: 700;
+	text-align: center;
+	text-transform: uppercase;
+	border: 2px solid var(--clr_text_light);
+	border-radius: 8px;
+	cursor: pointer;
 
+	&:hover {
+		border: 2px solid var(--clr_success);
+		transform: scale(1.1);
+		transition: all 0.2s ease-in-out;
+	}
+}
+.btn--small {
+	height: calc(var(--space_s) + var(--space_m));
+	min-width: var(--space_xl);
+	padding: calc(var(--space_s) - 3px);
+	font-size: 0.5rem;
+	margin-left: var(--space_m);
+}

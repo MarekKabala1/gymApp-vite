@@ -1,0 +1,26 @@
+.error {
+	height: 100vh;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+
+	.error__text {
+		font-size: var(--fonts_m);
+		text-align: center;
+	}
+	.error__link {
+		font-size: var(--fonts_xs);
+		transition: transform 0.5s ease-in-out;
+
+		&:hover {
+			border: 1px solid red;
+			transform: scale(1.5);
+		}
+		.error__link-span {
+			text-transform: uppercase;
+			border-bottom: 1px solid var(--clr_text_light);
+			text-align: center;
+		}
+	}
+}

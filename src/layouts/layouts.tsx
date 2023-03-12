@@ -1,7 +1,6 @@
 import { Link, Outlet } from 'react-router-dom';
-import '../css/layout.css';
-import '../index.css';
-import Logo from './Logo';
+import '@@/layout.css';
+import Logo from '@/components/Logo';
 
 const Layout = () => {
 	return (
@@ -11,12 +10,16 @@ const Layout = () => {
 					<Logo className='header__logo' />
 				</Link>
 				<nav className='header__nav'>
-					<Link className='btn header__btn' to={'/login'}>
-						LogIn
-					</Link>
-					<Link className='btn header__btn' to={'/register'}>
-						signUp
-					</Link>
+					<div className='btn btn--small'>
+						<Link className='header__btn' to={'/login'}>
+							LogIn
+						</Link>
+					</div>
+					<div className='btn btn--small'>
+						<Link className='header__btn' to={'/register'}>
+							signUp
+						</Link>
+					</div>
 				</nav>
 			</header>
 			<main className='main'>
