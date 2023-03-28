@@ -1,18 +1,23 @@
-import express from "express"
+import express, { Express, Request, Response } from "express"
+import * as dotenv from "dotenv"
+import colors from 'colors'
+import connectDB from "./config/db"
+import { routes } from './routes/nutritionRoutes'
+
+dotenv.config()
+
+colors.enable();
+colors.enable();
 
 const port = process.env.PORT || 5001
-const app = express()
+const app: Express = express()
 
-app.get ('/', (req,res )=>{
-  return res.send('hello from express')
-});
+connectDB()
 
-app.post('/api',(req,res)=>{
-  console.log(req.body)
+app.use(express.json())
 
-  return res.sendStatus(200)
+app.use('/nutrition', routes)
+
+app.listen(5000, () => {
+	console.log(`Application started on http://localhost:${port}/nutrition`.underline.cyan)
 })
-
-app.listen(5000,()=>{
-  console.log('Aplication startted on http://localhost:5000')
-});
