@@ -29,7 +29,6 @@ const updateNutrition = async (req: Request<{ id: string }>, res: Response) => {
   const id = req.params.id
   const updatedNutritionItem = req.body
   const updateDB = await Nutrition.findByIdAndUpdate(id, updatedNutritionItem)
-  console.log(updateDB, `${updatedNutritionItem}`.red)
   return res.status(200).json(updateDB)
 }
 

@@ -1,5 +1,5 @@
 {
-  "name": "gymApp-Vite",
+  "name": "gym-buddy4u",
   "private": true,
   "version": "0.0.1",
   "type": "module",
@@ -11,13 +11,14 @@
   "dependencies": {
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "react-router-dom": "^6.8"
+    "react-router-dom": "^6.8.1"
   },
   "devDependencies": {
     "@types/node": "^18.14.6",
     "@types/react": "^18.0.27",
     "@types/react-dom": "^18.0.10",
     "@vitejs/plugin-react": "^3.1.0",
+    "postcss": "^8.4.21",
     "postcss-cli": "^10.1.0",
     "postcss-preset-env": "^8.0.1",
     "ts-node": "^10.9.1",

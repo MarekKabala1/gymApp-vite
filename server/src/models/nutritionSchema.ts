@@ -1,5 +1,5 @@
 import mongoose, { Model } from "mongoose";
-import { NutritionTypes } from "./nutrition.Interface";
+import { NutritionTypes } from "../types/nutritionInterface";
 const { Schema } = mongoose;
 
 const nutritionSchema = new Schema<NutritionTypes, Model<NutritionTypes>>({
