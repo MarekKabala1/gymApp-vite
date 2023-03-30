@@ -1,21 +1,36 @@
 .header {
 	display: flex;
 	justify-content: space-between;
-}
-.header__logo {
-	pointer-events: visible;
+
+	& .header__logo {
+		pointer-events: visible;
+	}
+	& .header__btn--link {
+		display: flex;
+		justify-content: space-around;
+		align-items: center;
+		transition: all 0.3s ease-in-out;
+
+		& svg {
+			height: 1.1rem;
+			width: 1.1rem;
+		}
+		&:hover {
+			transform: scale(1.2);
+		}
+	}
 }
 .footer {
-	position: relative;
+	position: absolute;
 	bottom: 1rem;
 	width: 100vw;
 	margin: 0;
 	padding: 0;
-}
-.footer__text {
-	display: grid;
-	position: absolute;
-	font-size: var(--fonts_xs);
-	letter-spacing: 0.2rem;
-	left: 50%;
+
+	& .footer__text {
+		display: block;
+		letter-spacing: 0.1rem;
+		text-align: center;
+		font-size: var(--fonts_xs);
+	}
 }

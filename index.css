@@ -45,7 +45,15 @@ a {
 
 body {
 	background-color: var(--clr_primary);
-	margin: var(--space_m);
+	min-block-size: 100vh;
+	overflow-x: hidden;
+	margin: 0;
+	padding: 0;
+}
+#root {
+	padding: var(--space_m);
+	min-block-size: 100vh;
+	position: relative;
 }
 
 img {
@@ -64,17 +72,16 @@ svg {
 	border: 2px solid var(--clr_text_light);
 	border-radius: 8px;
 	cursor: pointer;
+	transition: all 0.6s ease-in-out;
 
 	&:hover {
-		border: 2px solid var(--clr_success);
-		transform: scale(1.1);
-		transition: all 0.2s ease-in-out;
+		background-color: var(--clr_success);
 	}
 }
 .btn--small {
 	height: calc(var(--space_s) + var(--space_m));
-	min-width: var(--space_xl);
-	padding: calc(var(--space_s) - 3px);
-	font-size: 0.5rem;
+	min-width: calc(var(--space_xx) - var(--space_m));
+	font-size: 0.6rem;
 	margin-left: var(--space_m);
+	text-align: center;
 }
