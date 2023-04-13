@@ -1,7 +1,5 @@
-import React from 'react';
-
 const signUp = () => {
-	return <div>signUp</div>;
+	return <div className='wrapper'>signUp</div>;
 };
 
 export default signUp;

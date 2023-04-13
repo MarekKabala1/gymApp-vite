@@ -1,35 +1,35 @@
 import { Link, Outlet } from 'react-router-dom';
-import '@@/layout.css';
 import Logo from '@/components/Logo';
 import { AiOutlineLogin, AiOutlineUserAdd } from 'react-icons/ai';
+import layoutCSS from '@@/layout.module.css';
 
 const Layout = () => {
 	return (
 		<>
-			<header className='header'>
+			<header className={layoutCSS.header}>
 				<Link to={'/'}>
-					<Logo className='header__logo' />
+					<Logo className={layoutCSS.header__logo} />
 				</Link>
-				<nav className='header__nav'>
+				<nav className={layoutCSS.header__nav}>
 					<div className='btn btn--small'>
-						<Link className='header__btn--link' to={'/login'}>
+						<Link className={layoutCSS.header__btn_link} to={'/login'}>
 							<AiOutlineLogin />
 							LogIn
 						</Link>
 					</div>
 					<div className='btn btn--small'>
-						<Link className='header__btn--link' to={'/signUp'}>
+						<Link className={layoutCSS.header__btn_link} to={'/signUp'}>
 							<AiOutlineUserAdd />
 							signUp
 						</Link>
 					</div>
 				</nav>
 			</header>
-			<main className='main'>
+			<main className={layoutCSS.main}>
 				<Outlet />
 			</main>
-			<footer className='footer'>
-				<p className='footer__text'>All rights reserved GymBaddy4U</p>
+			<footer className={layoutCSS.footer}>
+				<p className={layoutCSS.footer__text}>All rights reserved GymBaddy4U</p>
 			</footer>
 		</>
 	);

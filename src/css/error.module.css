@@ -10,17 +10,24 @@
 		text-align: center;
 	}
 	.error__link {
-		font-size: var(--fonts_xs);
-		transition: transform 0.5s ease-in-out;
+		font-size: var(--fonts_s);
+		transition: all 0.3s ease-in-out;
 
 		&:hover {
-			border: 1px solid red;
+			border: 3px solid var(--clr_success);
+			border-radius: 5px;
+			padding: var(--space_s);
 			transform: scale(1.5);
+			color: var(--clr_success);
 		}
 		.error__link-span {
 			text-transform: uppercase;
 			border-bottom: 1px solid var(--clr_text_light);
 			text-align: center;
+
+			&:hover {
+				border-bottom: 1px solid var(--clr_success);
+			}
 		}
 	}
 }

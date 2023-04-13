@@ -1,18 +1,18 @@
 import { Link } from 'react-router-dom';
 import Logo from './Logo';
-import '@@/error.css';
+import errorCSS from '@@/error.module.css';
 
 export const Error = () => {
 	return (
-		<main className='error'>
+		<main className={errorCSS.error}>
 			<Link to='/'>
 				<Logo />
 			</Link>
-			<p className='error__text'>
+			<p className={errorCSS.error__text}>
 				Sorry something went wrong go back to the home page.
 				<br />
-				<Link className='error__link' to={'/'}>
-					<span className='error__link-span'>Go back to home page</span>
+				<Link className={errorCSS.error__link} to={'/'}>
+					<span className={errorCSS.error__link}>Go back to home page</span>
 				</Link>
 			</p>
 		</main>
