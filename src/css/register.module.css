@@ -29,35 +29,22 @@
 		}
 	}
 
-	& .eye {
-		position: relative;
-		cursor: pointer;
-		top: -7.6rem;
-		right: -6rem;
-	}
-
 	& .btn_wrapper {
 		display: flex;
 		position: relative;
 		justify-content: center;
 		width: 60%;
 
-		& .resetPassword {
+		& .btn {
+			background-color: var(--clr_primary);
+		}
+
+		& .logIn_link {
 			position: absolute;
 			top: -1.4rem;
 			right: 0;
 			font-size: var(--fonts_xs);
 			pointer-events: visible;
-
-			&:focus-within {
-				border: 1px dashed var(--clr_button);
-				border-radius: 3px;
-				padding: 3px;
-			}
-		}
-
-		& .btn {
-			background-color: var(--clr_primary);
 		}
 	}
 }

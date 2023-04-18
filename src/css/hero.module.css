@@ -1,0 +1,20 @@
+.hero_wrapper {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	gap: var(--space_l);
+	align-items: center;
+	margin: 0 auto;
+	width: 90%;
+	height: 100%;
+	text-align: center;
+
+	& .hero_header > span {
+		border-bottom: 2px solid var(--clr_text_light);
+	}
+
+	& .hero_text {
+		/* text-align: left; */
+		line-height: 2rem;
+	}
+}

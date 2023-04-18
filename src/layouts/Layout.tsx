@@ -7,18 +7,24 @@ const Layout = () => {
 	return (
 		<>
 			<header className={layoutCSS.header}>
-				<Link to={'/'}>
-					<Logo className={layoutCSS.header__logo} />
+				<Link
+					className={layoutCSS.link}
+					aria-label='Logo you are in home page'
+					to={'/'}>
+					<Logo className={layoutCSS.logo} aria-label='none' />
 				</Link>
-				<nav className={layoutCSS.header__nav}>
+				<nav className={layoutCSS.nav}>
 					<div className='btn btn--small'>
-						<Link className={layoutCSS.header__btn_link} to={'/login'}>
+						<Link className={layoutCSS.btn_link} to={'/login'}>
 							<AiOutlineLogin />
 							LogIn
 						</Link>
 					</div>
 					<div className='btn btn--small'>
-						<Link className={layoutCSS.header__btn_link} to={'/signUp'}>
+						<Link
+							className={layoutCSS.btn_link}
+							aria-label='sign up'
+							to={'/signUp'}>
 							<AiOutlineUserAdd />
 							signUp
 						</Link>

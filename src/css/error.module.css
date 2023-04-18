@@ -5,29 +5,36 @@
 	justify-content: center;
 	align-items: center;
 
-	.error__text {
+	& .logo_link:focus-within {
+		border: 1px dashed var(--clr_button);
+		border-radius: 5px;
+		padding: 5px 5px 2px 5px;
+		outline: none;
+	}
+
+	.text {
 		font-size: var(--fonts_m);
 		text-align: center;
 	}
-	.error__link {
+	.link {
 		font-size: var(--fonts_s);
-		transition: all 0.3s ease-in-out;
 
-		&:hover {
-			border: 3px solid var(--clr_success);
-			border-radius: 5px;
-			padding: var(--space_s);
-			transform: scale(1.5);
-			color: var(--clr_success);
-		}
-		.error__link-span {
+		.span_link {
 			text-transform: uppercase;
 			border-bottom: 1px solid var(--clr_text_light);
 			text-align: center;
+			transition: color 0.3s ease-in-out;
 
 			&:hover {
 				border-bottom: 1px solid var(--clr_success);
+				color: var(--clr_success);
 			}
+		}
+		&:focus-within {
+			border: 1px dashed var(--clr_button);
+			border-radius: 3px;
+			padding: 3px;
+			outline: none;
 		}
 	}
 }
