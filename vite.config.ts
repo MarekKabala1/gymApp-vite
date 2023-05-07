@@ -4,15 +4,15 @@ import * as path from 'path'
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  plugins: [ react()],
+  plugins: [react()],
   resolve: {
     alias: [
-     { find: '@', replacement: path.resolve(__dirname, 'src') },
-     { find: '@@', replacement: path.resolve(__dirname, 'src/css') },
+      { find: '@', replacement: path.resolve(__dirname, 'src') },
+      { find: '@@', replacement: path.resolve(__dirname, 'src/styles') },
     ],
   },
-  css:{
-    postcss:'./postcss.config.js'
+  css: {
+    postcss: './postcss.config.js'
   },
 })
 

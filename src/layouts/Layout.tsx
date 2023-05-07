@@ -1,34 +1,34 @@
-import { Link, Outlet } from 'react-router-dom';
 import Logo from '@/components/Logo';
-import { AiOutlineLogin, AiOutlineUserAdd } from 'react-icons/ai';
+import LogInButton from '@/components/LogInButton';
+import LogOutButton from '@/components/LogOutButton';
+import SignUpButton from '@/components/SignUpButton';
+
 import layoutCSS from '@@/layout.module.css';
 
+import { Link, Outlet, useNavigate } from 'react-router-dom';
+import { useEffect } from 'react';
+import { useAuth0 } from '@auth0/auth0-react';
+
 const Layout = () => {
+	const navigate = useNavigate();
+	const { user, isAuthenticated } = useAuth0();
+
+	useEffect(() => {
+		const authenticated =
+			isAuthenticated && user ? navigate('dashboard') : navigate('/');
+		return authenticated;
+	}, [isAuthenticated]);
+
 	return (
 		<>
 			<header className={layoutCSS.header}>
-				<Link
-					className={layoutCSS.link}
-					aria-label='Logo you are in home page'
-					to={'/'}>
+				<Link className={layoutCSS.logo_link} to={'/'}>
 					<Logo className={layoutCSS.logo} aria-label='none' />
 				</Link>
 				<nav className={layoutCSS.nav}>
-					<div className='btn btn--small'>
-						<Link className={layoutCSS.btn_link} to={'/login'}>
-							<AiOutlineLogin />
-							LogIn
-						</Link>
-					</div>
-					<div className='btn btn--small'>
-						<Link
-							className={layoutCSS.btn_link}
-							aria-label='sign up'
-							to={'/signUp'}>
-							<AiOutlineUserAdd />
-							signUp
-						</Link>
-					</div>
+					<LogInButton />
+					<LogOutButton />
+					<SignUpButton />
 				</nav>
 			</header>
 			<main className={layoutCSS.main}>

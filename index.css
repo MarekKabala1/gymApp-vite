@@ -1,14 +1,15 @@
 :root {
 	/* color */
 	--clr_primary: rgb(29, 44, 68);
-	--clr_button: rgba(13, 245, 227);
+	--clr_button: #0df5e3;
 	--clr_button_secondary: rgb(208, 190, 212);
 	--clr_secondary: rgba(55, 49, 66);
 	--clr_text_light: rgb(208, 190, 212);
 	--clr_text_dark: rgb(121, 117, 117);
 	--clr_text_dark_alpha: rgb(121, 117, 117, 0.9);
 	--clr_danger: rgb(168, 6, 6);
-	--clr_success: hsl(112, 92%, 28%);
+	--clr_success: rgb(6, 137, 45);
+	--clr_hover: rgb(29, 134, 191);
 
 	/* spacing */
 	--space_xs: 0.5rem;
@@ -70,11 +71,18 @@ img {
 /* svg {
 	pointer-events: none;
 } */
+.container {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
 .btn {
 	display: inline-block;
 	height: calc(var(--space_s) + 0.8rem);
 	min-width: var(--space_xl);
 	color: var(--clr_text_light);
+	background-color: transparent;
 	font-weight: 700;
 	text-align: center;
 	text-transform: uppercase;
@@ -82,14 +90,19 @@ img {
 	border: 2px solid var(--clr_text_light);
 	border-radius: 7px;
 	cursor: pointer;
-	transition: transform 0.3s ease-in-out;
+	transition: color, border, box-shadow 0.3s ease-in-out;
 
 	&:hover {
-		transform: scale(1.1);
+		box-shadow: 0 0 0 3px var(--clr_primary), 0 0 0 5px var(--clr_hover);
+		outline: none;
+		border: 1px solid var(--clr_success);
+		color: var(--clr_success);
 	}
 
 	&:focus-within {
-		box-shadow: 0 0 0 3px var(--clr_primary), 0 0 0 4px var(--clr_button);
+		box-shadow: 0 0 0 3px var(--clr_primary), 0 0 0 5px var(--clr_hover);
 		outline: none;
+		border: 1px solid var(--clr_success);
+		color: var(--clr_success);
 	}
 }

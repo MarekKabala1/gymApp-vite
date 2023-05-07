@@ -1,10 +1,27 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import App from './App';
+import { Outlet, useNavigate } from 'react-router-dom';
+
 import '../index.css';
+import ErrorBoundary from '@/components/ErrorBoundary';
+import { AppState, Auth0Provider } from '@auth0/auth0-react';
+import Auth0ProviderNavigate from './auth0/Auth0.providerNavigate';
+
+const domain = import.meta.env.VITE_APP_AUTH0_DOMAIN || '';
+const clientId = import.meta.env.VITE_APP_AUTH0_CLIENT_ID || '';
+const redirectUri =
+	import.meta.env.VITE_APP_CALLBACK_URL || window.location.origin;
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
 	<React.StrictMode>
-		<App />
+		<ErrorBoundary>
+			<Auth0Provider
+				domain={domain}
+				clientId={clientId}
+				authorizationParams={{ redirect_uri: redirectUri }}>
+				<App />
+			</Auth0Provider>
+		</ErrorBoundary>
 	</React.StrictMode>
 );
