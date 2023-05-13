@@ -1,0 +1,12 @@
+.nav_wrapper {
+	background-color: var(--clr_secondary);
+	display: flex;
+	justify-content: space-between;
+
+	& .nav_icon {
+		height: 40px;
+		width: 40px;
+		background-color: red;
+		margin: 0.5rem;
+	}
+}

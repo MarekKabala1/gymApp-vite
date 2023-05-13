@@ -6,7 +6,7 @@ const Loading = () => {
 		<main className='container'>
 			<Logo />
 			<h1>Loading ...</h1>
-			<p>Wil be with you soon</p>
+			<p>Will be with you soon</p>
 		</main>
 	);
 };

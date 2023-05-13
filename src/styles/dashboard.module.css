@@ -1,6 +1,26 @@
+.navWrapper {
+	min-width: 100%;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+}
+.avatar_wrapper {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	gap: var(--space_s);
+}
 .avatar {
 	border-radius: 50%;
 	object-fit: cover;
 	height: 70px;
 	width: 70px;
+}
+.avatar_text {
+	font-size: var(--fonts_xs);
+}
+.link {
+	font-size: var(--fonts_xs);
+	line-height: 0.5rem;
 }

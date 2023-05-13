@@ -1,12 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import App from './App';
-import { Outlet, useNavigate } from 'react-router-dom';
 
 import '../index.css';
 import ErrorBoundary from '@/components/ErrorBoundary';
-import { AppState, Auth0Provider } from '@auth0/auth0-react';
-import Auth0ProviderNavigate from './auth0/Auth0.providerNavigate';
+import { Auth0Provider } from '@auth0/auth0-react';
 
 const domain = import.meta.env.VITE_APP_AUTH0_DOMAIN || '';
 const clientId = import.meta.env.VITE_APP_AUTH0_CLIENT_ID || '';

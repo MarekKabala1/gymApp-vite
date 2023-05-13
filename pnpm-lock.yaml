@@ -3,10 +3,11 @@ lockfileVersion: 5.4
 specifiers:
   '@auth0/auth0-react': ^2.0.1
   '@prisma/client': ^4.13.0
-  '@types/auth0': ^3.3.1
+  '@types/auth0': ^3.3.2
   '@types/node': ^18.14.6
   '@types/react': ^18.0.27
   '@types/react-dom': ^18.0.10
+  '@types/react-router': ^5.1.20
   '@vitejs/plugin-react': ^3.1.0
   eslint: ^8.39.0
   postcss: ^8.4.21
@@ -25,7 +26,6 @@ specifiers:
 dependencies:
   '@auth0/auth0-react': 2.0.1_biqbaboplfbrettd7655fr4n2y
   '@prisma/client': 4.13.0_prisma@4.13.0
-  '@types/auth0': 3.3.1
   react: 18.2.0
   react-dom: 18.2.0_react@18.2.0
   react-icons: 4.8.0_react@18.2.0
@@ -33,9 +33,11 @@ dependencies:
   react-toastify: 9.1.2_biqbaboplfbrettd7655fr4n2y
 
 devDependencies:
+  '@types/auth0': 3.3.2
   '@types/node': 18.14.6
   '@types/react': 18.0.27
   '@types/react-dom': 18.0.10
+  '@types/react-router': 5.1.20
   '@vitejs/plugin-react': 3.1.0_vite@4.1.0
   eslint: 8.39.0
   postcss: 8.4.21
@@ -926,9 +928,13 @@ packages:
     resolution: {integrity: sha512-yOlFc+7UtL/89t2ZhjPvvB/DeAr3r+Dq58IgzsFkOAvVC6NMJXmCGjbptdXdR9qsX7pKcTL+s87FtYREi2dEEQ==}
     dev: true
 
-  /@types/auth0/3.3.1:
-    resolution: {integrity: sha512-jUGOLIiZ8tE4ZYwVH+fSRfg4MT13nC1xbNq+wHhTQVRzEZhckRnAGEoGntRKvXs4MGxS8hQq846c/dLLTipg5g==}
-    dev: false
+  /@types/auth0/3.3.2:
+    resolution: {integrity: sha512-lnZKcXQar1SGYsOkQuHFM4OONlqJyN10h3+BD670IbxW/qFHCaul1rcJeE89RfzA3oF3WXl8sS/Rrazu2KHagQ==}
+    dev: true
+
+  /@types/history/4.7.11:
+    resolution: {integrity: sha512-qjDJRrmvBMiTx+jyLxvLfJU7UznFuokDv4f3WRuriHKERccVpFU+8XMQUAbDzoiJCsmexxRExQeMwwCdamSKDA==}
+    dev: true
 
   /@types/node/18.14.6:
     resolution: {integrity: sha512-93+VvleD3mXwlLI/xASjw0FzKcwzl3OdTCzm1LaRfqgS21gfFtK3zDXM5Op9TeeMsJVOaJ2VRDpT9q4Y3d0AvA==}
@@ -941,6 +947,13 @@ packages:
   /@types/react-dom/18.0.10:
     resolution: {integrity: sha512-E42GW/JA4Qv15wQdqJq8DL4JhNpB3prJgjgapN3qJT9K2zO5IIAQh4VXvCEDupoqAwnz0cY4RlXeC/ajX5SFHg==}
     dependencies:
+      '@types/react': 18.0.27
+    dev: true
+
+  /@types/react-router/5.1.20:
+    resolution: {integrity: sha512-jGjmu/ZqS7FjSH6owMcD5qpq19+1RS9DeVRqfl1FeBMxTDQAGwlMWOcs52NDoXaNKyG3d1cYQFMs9rCrb88o9Q==}
+    dependencies:
+      '@types/history': 4.7.11
       '@types/react': 18.0.27
     dev: true
 
