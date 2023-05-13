@@ -1,6 +1,5 @@
 generator client {
-  provider        = "prisma-client-js"
-  previewFeatures = ["referentialIntegrity"]
+  provider = "prisma-client-js"
 }
 
 datasource db {
@@ -29,6 +28,8 @@ model Routine {
   date       DateTime   @default(now())
   user       User       @relation(fields: [userId], references: [id])
   exercises  Exercise[]
+
+  @@index([userId])
 }
 
 model Exercise {
@@ -37,6 +38,8 @@ model Exercise {
   name      String
   routine   Routine @relation(fields: [routineId], references: [id])
   sets      Set[]
+
+  @@index([routineId])
 }
 
 model Set {
@@ -45,6 +48,8 @@ model Set {
   weight     Float
   reps       Int
   exercise   Exercise @relation(fields: [exerciseId], references: [id])
+
+  @@index([exerciseId])
 }
 
 model Nutrition {
@@ -53,4 +58,6 @@ model Nutrition {
   date   DateTime @default(now())
   values Json
   user   User     @relation(fields: [userId], references: [id])
+
+  @@index([userId])
 }
