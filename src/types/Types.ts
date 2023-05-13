@@ -69,5 +69,6 @@ export interface DbUserData extends User {
   userName: string | FormDataEntryValue;
   height: number | FormDataEntryValue;
   weight: number | FormDataEntryValue;
-  gender: ['Male', 'Female', 'Other'] | FormDataEntryValue
+  gender: ['Male', 'Female', 'Other'] | FormDataEntryValue;
+  age?: number;
 }

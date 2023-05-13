@@ -79,7 +79,7 @@ export const userDataFormAction: ActionFunction = async ({ request }) => {
 
 		return toast.success(`Hi ${data.userName} all Data submitted`);
 	} catch (err) {
-		return toast.error('Something went wrong refresh and rty again');
+		return toast.error('Something went wrong refresh page and rty again');
 		console.log(err);
 	}
 };

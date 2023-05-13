@@ -4,10 +4,8 @@ import dashboardCSS from '@@/dashboard.module.css';
 import LogOutButton from '@/components/LogOutButton';
 import { GetUserData } from '@/types/Types';
 import { NavLink } from 'react-router-dom';
-import { useNavigate } from 'react-router-dom';
 
 const DashboardNav = () => {
-	const navigate = useNavigate();
 	const { user, isAuthenticated, isLoading }: GetUserData = useAuth0();
 	const toastId = 'Toast.Dashboard.authenticated';
 
@@ -15,14 +13,13 @@ const DashboardNav = () => {
 		? toast(`Hi ${user?.name} U are logged in`, { toastId: toastId })
 		: '';
 
-	if (!user) return navigate('/login');
-	if (user.name === user.email) {
+	if (user?.name === user?.email) {
 		return (
 			<>
 				{isAuthenticated && (
 					<nav className={dashboardCSS.navWrapper}>
 						<div className={dashboardCSS.avatar_wrapper}>
-							<img src={user.picture} className={dashboardCSS.avatar} />
+							<img src={user?.picture} className={dashboardCSS.avatar} />
 							<p className={dashboardCSS.avatar_text}>{user?.name}</p>
 						</div>
 						<div>
@@ -42,8 +39,8 @@ const DashboardNav = () => {
 					<nav className={dashboardCSS.navWrapper}>
 						<div>
 							<img src={user?.picture} className={dashboardCSS.avatar} />
-							<p>{user.name}</p>
-							<p>{user.email}</p>
+							<p>{user?.name}</p>
+							<p>{user?.email}</p>
 						</div>
 						<div>
 							<LogOutButton />
